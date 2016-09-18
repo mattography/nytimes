@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="movieapp">
+
+  <head>
+    <title>MyNews</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+
+  <body ng-controller="movieController">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">MyNews</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+        </div>
+      </div>
+    </nav>
+    <div class="container results">
+      <hgroup class="mb20">
+        <h1 class="header">Science News</h1>
+        <hr>
+      </hgroup>
+
+      <div class="col-lg-4 col-md-4 col-sm-6" ng-repeat="news in results">
+        <div class="news">
+          <div class="img-figure">
+            <div class="cat">{{news.section}}</div>
+            <img src="{{news.multimedia[3].url}}" class="{{news.title}}">
+          </div>
+
+          <div class="title">
+            <h1>{{news.title}}</h1>
+          </div>
+          <p class="description">
+            {{news.abstract}}
+          </p>
+
+          <p class="more">
+            <a href="{{news.url}}">read more</a><i class="fa fa-angle-right" aria-hidden="true"></i>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>
